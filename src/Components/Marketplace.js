@@ -1,11 +1,13 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import MarketplaceCard from "./MarketplaceCard";
+import Filter from "./Filter";
 
 const Marketplace = (props) => {
      return (
           <div>
-               <Navbar/>
+               <Navbar />
                <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
                     <div className="p-2 md:p-4 bg-blue-500">
                          <div>
@@ -99,85 +101,52 @@ const Marketplace = (props) => {
                          </div>
                     </div>
                     <div className="lg:col-span-3 md:col-span-2 ">
-                         
-                         <div className="grid grid-cols-3 p-2 md:p-6 gap-10 text-center">
-                         <a href="./detail">
-                              <div className="shadow-2xl px-3 my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
+                         <div className="my-6">
+                              <p className="inline-block bg-blue-200 border border-gray-500 text-center text-lg ml-6 py-2 px-10">
+                                   Location
+                              </p>
+                              <div className="inline-block border border-gray-500">
+                                   <input className="inline-block text-gray-600 text-lg py-2 px-10" placeholder="Enter City"></input>
+                                   <svg class="w-7 h-7 text-gray-500 mr-2 inline-block" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+
                               </div>
+
+                         </div>
+                         <div className="my-2 ml-4">
+                              <Filter filter="Galvanized Steel"/>
+                              <Filter filter="304"/>
+                              <Filter filter="Maharashtra"/>
+                         </div>
+
+                         <div className="grid grid-cols-3 p-2 md:p-6 gap-7 text-center">
+                              <a href="./detail">
+                                   <MarketplaceCard />
                               </a>
                               <a href="./detail">
-                              <div className="shadow-2xl px-3  my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div></a>
-                              <a href="./detail">
-                              <div className="shadow-2xl px-3  my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div>
+                                   <MarketplaceCard />
                               </a>
                               <a href="./detail">
-                                   <div className="shadow-2xl px-3 my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div></a>
-                              <a href="./detail">
-                              <div className="shadow-2xl px-3 my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div>
+                                   <MarketplaceCard />
+
                               </a>
                               <a href="./detail">
-                              <div className="shadow-2xl px-3 my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div>
+                                   <MarketplaceCard />
                               </a>
                               <a href="./detail">
-                              <div className="shadow-2xl px-3 my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div>
+                                   <MarketplaceCard />
+
                               </a>
                               <a href="./detail">
-                              <div className="shadow-2xl px-3 my-6">
-                                   <img src="images/iron1.png" className="w-5/6 m-auto mb-6 " />
-                                   <p className="font-light text-base">Shell Mould For Construction</p>
-                                   <p className="text-lg font-semibold my-2">₹110/ KG</p>
-                                   <p className="text-base">Vikas Iron & Steel Company</p>
-                                   <p className="font-thin text-sm">Pune, Maharashtra</p>
-                                   <button className="text-green-500 text-xl border border-green-500 mt-4 mb-6 rounded-full px-4 py-1">Contact Seller</button>
-                              </div>
+                                   <MarketplaceCard />
+
+                              </a>
+                              <a href="./detail">
+                                   <MarketplaceCard />
+
+                              </a>
+                              <a href="./detail">
+                                   <MarketplaceCard />
+
                               </a>
                          </div>
                     </div>

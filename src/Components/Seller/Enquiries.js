@@ -36,8 +36,8 @@ const Enquiries = () => {
                                    <button className="text-base text-purple-900 hover:underline decoration-1 decoration-blue-800 underline-offset-2">Read More</button>
                               </div>
                               <div className="col-span-1 text-center py-3">
-                                   <button  onClick={()=>{setDialog(true);setTimeout(setfinal,2950);}} className="text-white shadow my-2 hover:shadow-xl bg-green-600 rounded-full w-32 py-1 mx-auto block">Accept</button>
-                                   <button className="text-white shadow my-2 hover:shadow-xl bg-red-600 rounded-full w-32 py-1 mx-auto block">Reject</button>
+                                   <button  onClick={()=>{setDialog(true);setTimeout(setfinal,2950);}} className=" shadow my-2 hover:shadow-xl border border-green-500 text-green-500 hover:bg-green-500 hover:text-white bg-white-500 rounded-xl w-32 py-1 mx-auto block">Accept</button>
+                                   <button className="text-red-500 shadow my-2 hover:shadow-xl bg-white hover:bg-red-500 hover:text-white border border-red-500 rounded-xl w-32 py-1 mx-auto block">Reject</button>
                               </div>
 
                          </div>
@@ -51,8 +51,8 @@ const Enquiries = () => {
                                    <button className="text-base text-purple-900 hover:underline decoration-1 decoration-blue-800 underline-offset-2">Read More</button>
                               </div>
                               <div className="col-span-1 text-center py-3">
-                                   <button onClick={()=>{setDialog(true);setTimeout(setfinal,2950);}} className="text-white shadow my-2 hover:shadow-xl bg-green-600 rounded-full w-32 py-1 mx-auto block">Accept</button>
-                                   <button className="text-white shadow my-2 hover:shadow-xl bg-red-600 rounded-full w-32 py-1 mx-auto block">Reject</button>
+                                   <button onClick={()=>{setDialog(true);setTimeout(setfinal,2950);}} className=" shadow my-2 hover:shadow-xl border border-green-500 text-green-500 hover:bg-green-500 hover:text-white bg-white-500 rounded-xl w-32 py-1 mx-auto block">Accept</button>
+                                   <button className="text-red-500 shadow my-2 hover:shadow-xl bg-white hover:bg-red-500 hover:text-white border border-red-500 rounded-xl w-32 py-1 mx-auto block">Reject</button>
                               </div>
 
                          </div>
@@ -66,8 +66,8 @@ const Enquiries = () => {
                                    <button className="text-base text-purple-900 hover:underline decoration-1 decoration-blue-800 underline-offset-2">Read More</button>
                               </div>
                               <div className="col-span-1 text-center py-3">
-                                   <button  onClick={()=>{setDialog(true);setTimeout(setfinal,2950);}} className="text-white shadow my-2 hover:shadow-xl bg-green-600 rounded-full w-32 py-1 mx-auto block">Accept</button>
-                                   <button className="text-white shadow my-2 hover:shadow-xl bg-red-600 rounded-full w-32 py-1 mx-auto block">Reject</button>
+                                   <button  onClick={()=>{setDialog(true);setTimeout(setfinal,2950);}} className=" shadow my-2 hover:shadow-xl border border-green-500 text-green-500 hover:bg-green-500 hover:text-white bg-white-500 rounded-xl w-32 py-1 mx-auto block">Accept</button>
+                                   <button className="text-red-500 shadow my-2 hover:shadow-xl bg-white hover:bg-red-500 hover:text-white border border-red-500 rounded-xl w-32 py-1 mx-auto blockk">Reject</button>
                               </div>
 
                          </div>

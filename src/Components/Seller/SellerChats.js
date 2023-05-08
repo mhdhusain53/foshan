@@ -32,7 +32,9 @@ const SellerChats = () => {
                     <div className=" col-span-1 m-3">
                          <div className="px-2 my-6 text-center">
                               <input className="focus:border-b-2 focus:border-gray-600 px-1 inline-block border-b-2 border-gray-400 w-4/5 "></input>
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 ml-2 fill-gray-500 inline-block" viewBox="0 0 512 512"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" /></svg>
+                              <button>
+                                   <svg class="w-8  hover:text-gray-600 text-gray-400 mr-2 inline-block " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                              </button>
                          </div>
 
                          <div onClick={() => { setUser(0) }} className="relative  h-28 mt-6 hover:bg-gray-100 border-b border-r border-t border-gray-400 p-2">
@@ -43,15 +45,15 @@ const SellerChats = () => {
                               {/* <p className="absolute top-16 shadow right-6 font-normal bg-red-500 rounded-full px-1 text-white text-sm">2</p> */}
 
                          </div>
-                         
-                              <div onClick={() => { setUser(1) }} className="relative  h-28  hover:bg-gray-100 border-b border-r border-gray-400 p-2">
-                                   <img src="/images/logo.png" className="mt-2 ml-2 absolute top-4 rounded-full w-16 h-16 " />
-                                   <h1 className="absolute top-6 left-28 font-medium text-xl">{ChatData[1].name}</h1>
-                                   <h1 className="absolute top-16 left-28 font-light text-base">What is pricing of Steel ?</h1>
-                                   <p className="absolute top-7 right-6 font-normal text-blue-400 text-sm">Monday</p>
-                                   {/* <p className="absolute top-16 shadow right-6 font-normal bg-red-500 rounded-full px-1 text-white text-sm"></p> */}
-                              </div>
-                         
+
+                         <div onClick={() => { setUser(1) }} className="relative  h-28  hover:bg-gray-100 border-b border-r border-gray-400 p-2">
+                              <img src="/images/logo.png" className="mt-2 ml-2 absolute top-4 rounded-full w-16 h-16 " />
+                              <h1 className="absolute top-6 left-28 font-medium text-xl">{ChatData[1].name}</h1>
+                              <h1 className="absolute top-16 left-28 font-light text-base">What is pricing of Steel ?</h1>
+                              <p className="absolute top-7 right-6 font-normal text-blue-400 text-sm">Monday</p>
+                              {/* <p className="absolute top-16 shadow right-6 font-normal bg-red-500 rounded-full px-1 text-white text-sm"></p> */}
+                         </div>
+
 
                          <div onClick={() => { setUser(2) }} className="relative  h-28  hover:bg-gray-100 border-b border-r border-gray-400 p-2">
                               <img src="/images/logo.png" className="mt-2 ml-2 absolute top-4 rounded-full w-16 h-16 " />

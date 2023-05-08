@@ -9,6 +9,15 @@ const Contract = () => {
      return (
           <div>
                <SellerNavbar />
+
+               <div className="my-6 border mx-auto  px-8 py-1 rounded-full border-gray-600 text-center md:w-1/4 w-1/3 ">
+                    <input type="text" className="outline-gray-50 appearance-none text-lg text-gray-600 focus:border-0 inline-block w-2/3 border-b-1 py-1 px-3" placeholder="Search Contract">
+                         
+                    </input>
+                    <svg class="w-7 h-7 text-gray-500 mr-2 inline-block " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+
+
+               </div>
                <div className="grid grid-cols-3 md:mx-32 mx-6 my-12">
                     <div className="bg-blue-700 text-center px-4 mx-8 text-xl font-medium py-12">
                          <button className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">All Contracts</button>
