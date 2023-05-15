@@ -30,7 +30,7 @@ const Home = (props) => {
           <div className="text-3xl ">
                <Navbar login={props.login} logout={props.logout} />
                <div className="bg-gray-300 flex w-100 h-96">
-                    <button className="text-green-500 px-8 py-2 text-2xl m-auto border-2 bg-white border-green-500 hover:bg-green-500 hover:text-white rounded-xl hover:shadow-xle">Contact Seller</button>
+                    <button className="text-green-500 md:px-8 px-4 md:py-2 py-1 md:text-2xl text-lg m-auto border-2 bg-white border-green-500 hover:bg-green-500 hover:text-white rounded-xl hover:shadow-xle">Contact Seller</button>
                </div>
 
                <Carousel className=" mx-8 py-8 md:mx-24"
@@ -40,6 +40,7 @@ const Home = (props) => {
                     infinite={true}
                     autoPlay={true}
                     autoPlaySpeed={2000}>
+
                          <Carouselitem src="images/carbon1.png" name="Carbon" />
                          <Carouselitem src="images/iron2.png" name="Steel" />
                          <Carouselitem src="images/silicon1.png" name="Silicon" />
@@ -51,15 +52,15 @@ const Home = (props) => {
 
                </Carousel>
 
-               <div className="mt-32">
-                    <h2 className="text-center text-4xl">Our Category</h2>
+               <div className="mt-24 md:mt-32 ">
+                    <h2 className="text-center font-medium text-3xl md:text-4xl">Our Category</h2>
                </div>
 
                
 
-               <div className="m-8 mx-16 grid grid-cols-3 gap-10">
-                    <div className="  border border-black p-4 hover:shadow-xl">
-                         <h1 className="text-center mb-8 text-3xl">Top picks of Silicon</h1>
+               <div className="m-8  md:mx-16 grid sm:grid-cols-3 grid-cols-1 gap-5 md:gap-10 text-2xl md:text-3xl">
+                    <div className="  border border-black p-4 hover:shadow-2xl">
+                         <h1 className="text-center mb-8 ">Top picks of Silicon</h1>
                          <div className="align-items-center grid grid-cols-2 mx-auto ">
                               <img alt="silicon" className="w-40 pr-2 inline-block" src="images/silicon1.png" />
                               <img alt="silicon" className="w-40 pl-2 inline-block" src="images/silicon2.png" />
@@ -68,8 +69,8 @@ const Home = (props) => {
                          </div>
                     </div>
 
-                    <div className="  border border-black p-4 hover:shadow-xl">
-                         <h1 className="text-center mb-8">Top picks of Silicon</h1>
+                    <div className="  border border-black p-4 hover:shadow-2xl">
+                         <h1 className="text-center mb-8">Top picks of Zinc</h1>
                          <div className="align-items-center grid grid-cols-2 mx-auto ">
                               <img alt="zinc" className="w-40 pr-2 inline-block" src="images/zinc1.png" />
                               <img alt="zinc" className="w-40 pl-2 inline-block" src="images/zinc2.png" />
@@ -78,8 +79,8 @@ const Home = (props) => {
                          </div>
                     </div>
 
-                    <div className="  border border-black p-4 hover:shadow-xl">
-                         <h1 className="text-center mb-8">Top picks of Silicon</h1>
+                    <div className="  border border-black p-4 hover:shadow-2xl">
+                         <h1 className="text-center mb-8">Top picks of Copper</h1>
                          <div className="align-items-center grid grid-cols-2 mx-auto ">
                               <img alt="carbon" className="w-40 pr-2 inline-block" src="images/carbon1.png" />
                               <img alt="carbon" className="w-40 pl-2 inline-block" src="images/carbon2.png" />
@@ -89,45 +90,45 @@ const Home = (props) => {
                     </div>
                </div>
 
-               <div className="mt-24 mx-6 md:mx-16 ">
+               <div className="md:mt-24 mt-16 mx-3 md:mx-16 ">
                     <h1 className="text-4xl text-center mb-8">Best of Iron</h1>
                     <a href="./login">
-                         <div className="grid py-8 md:px-8 px-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 text-center center-align-center justify-center gap-5">
+                         <div className="grid py-8 md:px-8 px-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 text-center center-align-center justify-center md:gap-7 gap-4">
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
-                              <a className="text-2xl text-gray-400 hover:text-gray-500 hover:font-medium text-center mt-24 lg:mt-0">View All</a>
+                              <a className="text-2xl text-gray-400 hover:text-gray-500 hover:font-medium text-center mt-0">View All</a>
                          </div>
                     </a>
 
                </div>
 
-               <div className="mt-24 mx-6 md:mx-16 ">
+               <div className="md:mt-24 mt-16 mx-3 md:mx-16 ">
                     <h1 className="text-4xl text-center mb-8">Best of Steel</h1>
                     <a href="./login">
-                         <div className="grid py-8 md:px-8 px-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 text-center center-align-center justify-center gap-8">
+                         <div className="grid py-8 md:px-8 px-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 text-center center-align-center justify-center md:gap-7 gap-4">
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
-                              <a className="text-2xl text-gray-400 text-center hover:text-gray-500 hover:font-medium mt-24 lg:mt-0">View All</a>
+                              <a className="text-2xl text-gray-400 text-center hover:text-gray-500 hover:font-medium mt-0">View All</a>
                          </div>
                     </a>
                </div>
 
-               <div className="my-24 mx-6 md:mx-16 ">
+               <div className="md:my-24 my-16 mx-3 md:mx-16 ">
                     <h1 className="text-4xl text-center mb-8">Best of Copper</h1>
                     <a href="./login">
-                         <div className="grid py-8 md:px-8 px-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 text-center center-align-center justify-center gap-8">
+                         <div className="grid py-8 md:px-8 px-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 text-center center-align-center justify-center md:gap-7 gap-4">
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
                               <HomeCard />
-                              <a className="text-2xl text-gray-400 text-center hover:text-gray-500 hover:font-medium mt-24 lg:mt-0">View All</a>
+                              <a className="text-2xl text-gray-400 text-center hover:text-gray-500 hover:font-medium mt-0">View All</a>
                          </div>
                     </a>
                </div>
@@ -138,3 +139,4 @@ const Home = (props) => {
 }
 
 export default Home;
+

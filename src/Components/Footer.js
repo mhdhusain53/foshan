@@ -3,63 +3,63 @@ import React from "react";
 const Footer = () => {
      return (
           <div>
-               <footer class="bg-blue-800 ">
-                    <div class="mx-auto w-full max-w-screen-xl">
-                         <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+               <footer className="bg-blue-800 ">
+                    <div className="mx-auto w-full max-w-screen-xl">
+                         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
                               <div>
-                                   <h2 class="mb-6 text-2xl font-semibold uppercase text-white">Useful Links</h2>
-                                   <ul class="text-gray-300 text-base  font-medium">
-                                        <li class="mb-4">
-                                             <a href="#" class=" hover:underline">About</a>
+                                   <h2 className="mb-6 text-2xl font-semibold uppercase text-white">Useful Links</h2>
+                                   <ul className="text-gray-300 text-base  font-medium">
+                                        <li className="mb-4">
+                                             <a href="#" className=" hover:underline">About</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Contact</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Contact</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Advertise with us</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Advertise with us</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Terms of Service</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Terms of Service</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Privacy Policy</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Privacy Policy</a>
                                         </li>
                                    </ul>
                               </div>
                               <div>
-                                   <h2 class="mb-6 text-2xl font-semibold uppercase text-white">MarketPlace</h2>
-                                   <ul class="text-gray-300 text-base  font-medium">
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Buyers</a>
+                                   <h2 className="mb-6 text-2xl font-semibold uppercase text-white">MarketPlace</h2>
+                                   <ul className="text-gray-300 text-base  font-medium">
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Buyers</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Sellers</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Sellers</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Markets</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Markets</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Warehouse</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Warehouse</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">News</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">News</a>
                                         </li>
                                    </ul>
                               </div>
                               <div>
-                                   <h2 class="mb-6 text-2xl font-semibold uppercase text-white">Our Services</h2>
-                                   <ul class="text-gray-300 text-base  font-medium">
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">MarketPlace</a>
+                                   <h2 className="mb-6 text-2xl font-semibold uppercase text-white">Our Services</h2>
+                                   <ul className="text-gray-300 text-base  font-medium">
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">MarketPlace</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Mandi Prices</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Mandi Prices</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Advisories</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Advisories</a>
                                         </li>
-                                        <li class="mb-4">
-                                             <a href="#" class="hover:underline">Market Watch</a>
+                                        <li className="mb-4">
+                                             <a href="#" className="hover:underline">Market Watch</a>
                                         </li>
                                    </ul>
                               </div>
@@ -74,8 +74,8 @@ const Footer = () => {
 
                               </div>
                          </div>
-                         <div class=" pb-6 text-center items-center justify-between">
-                              <span class="text-sm text-white text-center">@ 2023 foshan.com. All Rights Reserved.</span>
+                         <div className=" pb-6 text-center items-center justify-between">
+                              <span className="text-sm text-white text-center">@ 2023 foshan.com. All Rights Reserved.</span>
 
                          </div>
                     </div>

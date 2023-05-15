@@ -14,7 +14,7 @@ const Contract = () => {
                     <input type="text" className="outline-gray-50 appearance-none text-lg text-gray-600 focus:border-0 inline-block w-2/3 border-b-1 py-1 px-3" placeholder="Search Contract">
                          
                     </input>
-                    <svg class="w-7 h-7 text-gray-500 mr-2 inline-block " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    <svg className="w-7 h-7 text-gray-500 mr-2 inline-block " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
 
 
                </div>
@@ -87,13 +87,13 @@ const Contract = () => {
                               <p className="font-medium text-lg text-center my-4">* Terms and Condition</p>
                               <div className="my-3 mt-6">
 
-                                   <div class="mx-3 inline-block items-center text-center">
-                                        <input onClick={() => { setDef(true) }} id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 " />
-                                        <label for="default-radio-1" class="ml-2 text-bas font-normal ">Use default contract template</label>
+                                   <div className="mx-3 inline-block items-center text-center">
+                                        <input onClick={() => { setDef(true) }} id="default-radio-1" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 " />
+                                        <label for="default-radio-1" className="ml-2 text-bas font-normal ">Use default contract template</label>
                                    </div>
-                                   <div class="mx-3 inline-block items-center">
-                                        <input onClick={() => { setDef(false) }} id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2" />
-                                        <label for="default-radio-2" class="ml-2 text-base font-normal ">Use your own contract</label>
+                                   <div className="mx-3 inline-block items-center">
+                                        <input onClick={() => { setDef(false) }} id="default-radio-2" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2" />
+                                        <label for="default-radio-2" className="ml-2 text-base font-normal ">Use your own contract</label>
                                    </div>
 
                               </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default () => {
      return (
-          <div className="bg-gray-100 shadow hover:shadow-2xl">
+          <div className="bg-gray-100 inline-block shadow hover:shadow-2xl">
                <img src="images/iron1.png" className="w-2/3 m-auto mb-4 " />
                <p className="font-light text-base">Shell Mould For Construction</p>
                <p className="text-lg font-medium my-2">₹110/ KG</p>

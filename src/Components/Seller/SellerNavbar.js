@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default () => {
      var location = window.location.pathname;
@@ -17,21 +18,21 @@ export default () => {
                          <div className="w-full block flex-grow  sm:w-auto">
 
                               <div className={`${nav ? "" : "hidden"}  sm:flex sm:items-center text-lg sm:text-2xl sm:justify-center text-black`}>
-                              <a href="/seller/profile" className={`${location === "/seller/profile" ? "underline decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
+                              <Link to="/seller/profile" className={`${location === "/seller/profile" ? "underline decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
                                        Profile
-                                   </a>
-                                   <a href="/seller/orders" className={`${location === "/seller/orders" ? "underline decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium  block mt-4 sm:inline-block ms:mt-0 mr-8`}>
+                                   </Link>
+                                   <Link to="/seller/orders" className={`${location === "/seller/orders" ? "underline decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium  block mt-4 sm:inline-block ms:mt-0 mr-8`}>
                                        Orders
-                                   </a>
-                                   <a href="/seller/chats" className={`${location === "/seller/chats" ? "underline decoration-4 decoration-blue-800 underline-offset-8  " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
+                                   </Link>
+                                   <Link to="/seller/chats" className={`${location === "/seller/chats" ? "underline decoration-4 decoration-blue-800 underline-offset-8  " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
                                         Chats
-                                   </a>
-                                   <a href="/seller/enquiries" className={`${location === "/seller/enquiries" ? "underline decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
+                                   </Link>
+                                   <Link to="/seller/enquiries" className={`${location === "/seller/enquiries" ? "underline decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
                                         Enquiries
-                                   </a>
-                                   <a href="/seller/contract" className={`${(location === "/seller/contract")||(location === "/seller/detail") ? "underline  decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
+                                   </Link>
+                                   <Link to="/seller/contract" className={`${(location === "/seller/contract")||(location === "/seller/detail") ? "underline  decoration-4 decoration-blue-800 underline-offset-8 " : "hover:font-semibold hover:text-blue-800"} font-medium block mt-4 sm:inline-block ms:mt-0 mr-8`}>
                                         Contract Management
-                                   </a>
+                                   </Link>
                                    
                               </div>
                          </div>
