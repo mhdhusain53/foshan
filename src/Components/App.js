@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./Home";
 import {Routes,Route,BrowserRouter} from "react-router-dom";
 import Login from "./Login";
@@ -17,31 +17,28 @@ import SellerChats from "./Seller/SellerChats";
 import Contract from "./Seller/Contract";
 import Orders from "./Seller/Orders";
 import DetailContract from "./Seller/DetailContract";
+import { auth } from "../firebase";
 
 const App = () => {
-    const [login,setLogin]=useState(false);
-    const logged=()=>{
-        setLogin(true);
-        console.log(login,"111");
-    }
-
-    const logout=()=>{
-        setLogin(false);
-    }
+   useEffect(()=>{
+    auth.onAuthStateChanged((user)=>{
+        console.log(user);
+    })
+   },[])
      
      return (
          <div>
              <div>
                     <BrowserRouter>
                         <Routes>
-                            <Route path="/" element={<Home login={login} logout={logout}/>}></Route>
-                            <Route path="/login" element={<Login setLogin={logged}/>}/>
-                            <Route path="/signup" element={<SignUp  setLogin={logged}/>}/>
-                            <Route path="/marketplace" element={<Marketplace  login={login}  logout={logout}/>}/>
-                            <Route path="/detail" element={<Detail  login={login}  logout={logout}/>}/>
-                            <Route path="/chats" element={<Chats  login={login}  logout={logout}/>}/>
-                            <Route path="/order" element={<Order  login={login}  logout={logout}/>}/>
-                            <Route path="/enquiries" element={<UserEnquiries  login={login}  logout={logout}/>}/>
+                            <Route path="/" element={<Home />}></Route>
+                            <Route path="/login" element={<Login />}/>
+                            <Route path="/signup" element={<SignUp  />}/>
+                            <Route path="/marketplace" element={<Marketplace  />}/>
+                            <Route path="/detail" element={<Detail  />}/>
+                            <Route path="/chats" element={<Chats  />}/>
+                            <Route path="/order" element={<Order />}/>
+                            <Route path="/enquiries" element={<UserEnquiries  />}/>
                             <Route path="/seller" element={<Seller/>}/>
                             <Route path="/seller/login" element={<SellerLogin/>}/>
                             <Route path="/seller/signup" element={<SellerSignUp/>}/>
