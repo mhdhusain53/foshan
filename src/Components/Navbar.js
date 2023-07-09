@@ -9,7 +9,7 @@ export default (props) => {
 
      }
      const profile = () => {
-          if (props.login === false) {
+          if (props.user === false) {
                return (
                     <div>
                          <Link to="/login" className="text-sm md:text-lg text-center inline-block py-1 md:py-2 px-2 md:px-3 mx-2 text-white bg-blue-700 rounded shadow hover:shadow-xl" aria-current="page">Login</Link>
@@ -17,10 +17,10 @@ export default (props) => {
                )
           } else {
                return (
-                    <div className="">
+                    <div className="ml-6">
                          <button id="dropdownDefaultButton" onClick={() => { setDrop(!drop) }} data-dropdown-toggle="dropdown" className="text-white bg-blue-700 hover:bg-blue-700  rounded text-sm md:text-lg font-medium md:px-3 px-2 mx-2 py-1 md:py-2 text-center inline-flex items-center shadow hover:shadow-xl" type="button">
                               <svg className="md:w-5 w-4 h-4 md:h-5 ml-1 mr-2 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" /></svg>
-                              Profile
+                              {props.user.name}
                               <svg className="w-4 h-4 ml-2 mr-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                          </button>
                          <div id="dropdown" className={` ${drop ? "" : "hidden"} relative z-10 mx-2 bg-white  rounded-lg shadow `}>
@@ -33,6 +33,9 @@ export default (props) => {
                                    </li>
                                    <li className="border">
                                         <Link to="/enquiries" className="block px-4 py-2 hover:bg-gray-100">Enquiry</Link>
+                                   </li>
+                                   <li className="border">
+                                        <Link to="/contract" className="block px-4 py-2 hover:bg-gray-100">Contract</Link>
                                    </li>
                                    <li className="border">
                                         <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Logout</Link>

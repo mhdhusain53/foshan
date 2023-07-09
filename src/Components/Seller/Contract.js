@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import SellerNavbar from "./SellerNavbar";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
+
 
 const Contract = () => {
      const [dialog, setDialog] = useState(false);
-     const [def, setDef] = useState(true);
 
      return (
           <div>
@@ -12,7 +13,7 @@ const Contract = () => {
 
                <div className="my-6 border mx-auto  px-8 py-1 rounded-full border-gray-600 text-center md:w-1/4 w-1/3 ">
                     <input type="text" className="outline-gray-50 appearance-none text-lg text-gray-600 focus:border-0 inline-block w-2/3 border-b-1 py-1 px-3" placeholder="Search Contract">
-                         
+
                     </input>
                     <svg className="w-7 h-7 text-gray-500 mr-2 inline-block " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
 
@@ -30,7 +31,14 @@ const Contract = () => {
                     <div className="col-span-2 border relative">
                          <div className="px-8 my-6 flex">
                               <p className="text-3xl flex-1 font-light mx-auto">Contract Management</p>
-                              <button onClick={() => { setDialog(true) }} className="bg-yellow-500 hover:bg-yellow-600 flex-2 text-white px-2 py-1 shadow hover:shadow-2xl rounded">+ Create New Contract</button>
+
+                              <Link to="../seller/detail" >
+                                   <button className="bg-yellow-500 hover:bg-yellow-600 flex-2 text-white px-2 py-1 shadow hover:shadow-2xl rounded">
+                                        + Create New Contract
+                                   </button>
+                              </Link>
+
+
                          </div>
 
                          <div className="px-6 py-6 my-6  border mx-8  shadow hover:shadow-xl">
@@ -64,7 +72,7 @@ const Contract = () => {
 
                          </div>
 
-                         <div className={`${dialog == true ? "hidden" : ""} px-6 py-6 my-6  border mx-8  shadow hover:shadow-xl`}>
+                         <div className={` px-6 py-6 my-6  border mx-8  shadow hover:shadow-xl`}>
                               <p className="text-xl py-1 font-medium">Contract ID: # 404-6088121-1681909</p>
                               <p className="text-lg py-1 font-light">Name: <span className="font-normal">John T</span></p>
                               <p className="text-lg pb-1 font-light">Product: <span className="font-normal">Cashew</span></p>
@@ -76,37 +84,6 @@ const Contract = () => {
                                    {/* <button className="flex-1 inline-block bg-green-700  py-1 text-white shadow hover:bg-green-800 hover:shadow-xl rounded-xl">Download Contract</button> */}
 
                               </div>
-
-                         </div>
-
-                         <div className={`absolute ${dialog == true ? "" : "hidden"} bg-gray-100 z-50 w-full h-full top-0 text-center`}>
-                              <div className="bg-gray-300 w-3/4 h-2/5 mx-auto mt-8">
-
-                              </div>
-                              <p className="font-medium text-lg text-center my-4">* Add your Digital Signature</p>
-                              <p className="font-medium text-lg text-center my-4">* Terms and Condition</p>
-                              <div className="my-3 mt-6">
-
-                                   <div className="mx-3 inline-block items-center text-center">
-                                        <input onClick={() => { setDef(true) }} id="default-radio-1" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 " />
-                                        <label for="default-radio-1" className="ml-2 text-bas font-normal ">Use default contract template</label>
-                                   </div>
-                                   <div className="mx-3 inline-block items-center">
-                                        <input onClick={() => { setDef(false) }} id="default-radio-2" type="radio" value="" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2" />
-                                        <label for="default-radio-2" className="ml-2 text-base font-normal ">Use your own contract</label>
-                                   </div>
-
-                              </div>
-
-                              <div className={`text-center mt-8 mb-4 ${def == false ? "" : "hidden"}`}>
-                                   <label className="block mb-2 font-medium text-lg" for="input">Upload your own contract</label>
-                                   <input type="file" className="w-52" id="input"></input>
-                              </div>
-
-                              <a href="./detail">
-                                   <button  className="text-white bg-green-700 mx-auto my-8 text-center shadow hover:shadow-xl px-3 py-1 rounded">Create Contract</button>
-
-                              </a>
 
                          </div>
 

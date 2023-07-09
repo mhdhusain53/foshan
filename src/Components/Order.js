@@ -6,7 +6,7 @@ const Order = (props) => {
      const [rating, setRating] = useState([0,0,0]);
      return (
           <div>
-               <Navbar />
+               <Navbar user={props.user}/>
                <div className="grid grid-cols-3 md:mx-32 mx-6 my-12">
                     <div className="bg-blue-700 text-center px-4 mx-8 text-xl font-medium py-12">
                          <button className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">All Orders</button>

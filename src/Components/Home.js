@@ -28,7 +28,7 @@ const Home = (props) => {
      };
      return (
           <div className="text-3xl ">
-               <Navbar login={props.login} logout={props.logout} />
+               <Navbar user={props.user}/>
                <div className="bg-gray-300 flex w-100 h-96">
                     <button className="text-green-500 md:px-8 px-4 md:py-2 py-1 md:text-2xl text-lg m-auto border-2 bg-white border-green-500 hover:bg-green-500 hover:text-white rounded-xl hover:shadow-xle">Contact Seller</button>
                </div>

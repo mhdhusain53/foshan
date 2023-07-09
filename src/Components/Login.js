@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { auth } from "../firebase";
 import {useNavigate} from "react-router-dom";
 
-const Login = ({setLogin}) => {
+const Login = (props) => {
      const [val,setVal]=useState({email:"",password:""});
      const [error,seterror]=useState("");
 
@@ -14,7 +14,8 @@ const Login = ({setLogin}) => {
           console.log(val);
           signInWithEmailAndPassword(auth,val.email,val.password).then(
                (res)=>{
-                    console.log(res);
+                    console.log(res._tokenResponse.displayName);
+                    props.onSetUser({name:res._tokenResponse.displayName,email:res._tokenResponse.email})
                     
                     navigate("../marketplace");
 

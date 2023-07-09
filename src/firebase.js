@@ -1,19 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth} from "firebase/auth";
+import { getDatabase } from "firebase/database"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCuUgrxn7E8OD9t5YOkBIbDV_tUz1YViwM",
-  authDomain: "foshan-e7c66.firebaseapp.com",
-  projectId: "foshan-e7c66",
-  storageBucket: "foshan-e7c66.appspot.com",
-  messagingSenderId: "392148853239",
-  appId: "1:392148853239:web:11a64894ce8549c7ac8ef2",
-  measurementId: "G-HWRWV8651E"
+  apiKey: "AIzaSyDG2hA2o_LyXPHmg7JrCAijNrwmm_hXCfc",
+  authDomain: "foshan-a38d8.firebaseapp.com",
+  projectId: "foshan-a38d8",
+  storageBucket: "foshan-a38d8.appspot.com",
+  messagingSenderId: "792025189046",
+  appId: "1:792025189046:web:b8813ed6f5bf7a260af417",
+  measurementId: "G-KTTGK07ZJQ",
+  databaseURL: "https://foshan-a38d8-default-rtdb.firebaseio.com"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth=getAuth();
+const database = getDatabase(app);
 
-export {app, auth};
+export { app, auth,database };

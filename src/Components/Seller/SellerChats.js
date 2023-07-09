@@ -26,7 +26,7 @@ const SellerChats = () => {
      return (
           <div>
                <SellerNavbar />
-               <h1 className="text-center mb-6 text-3xl font-light border-t pt-6">Messages</h1>
+               <h1 className="text-center mb-6 text-4xl font-light border-t pt-6">Messages</h1>
 
                <div className="border md:m-6 md:mx-20 grid grid-cols-3 ">
                     <div className=" col-span-1 m-3">
