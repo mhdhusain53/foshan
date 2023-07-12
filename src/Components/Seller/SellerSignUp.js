@@ -54,7 +54,7 @@ const SellerSignUp = (props) => {
                     if (check) {
 
                          sellers.push(sellerData);
-                         set(ref(database, 'sellers/'+userId ), sellerData).then((err) => {
+                         set(ref(database, 'sellers/'+userId ), sellers).then((err) => {
                               if (err) {
                                    console.log(err);
                               }

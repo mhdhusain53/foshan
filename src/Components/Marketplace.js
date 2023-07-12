@@ -28,9 +28,6 @@ const Marketplace = (props) => {
           props.onSetDetail(e);
      }
 
-     
-
-
      const handleKeyPress = (event) => {
           if (event.key === 'Enter') {
                setFilter([...filter, { name: searchValue }])

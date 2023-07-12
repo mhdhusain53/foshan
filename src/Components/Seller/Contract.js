@@ -1,11 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import SellerNavbar from "./SellerNavbar";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
+import { ref, set, get, getDatabase, child } from "firebase/database";
+import { database } from "../../firebase";
 
 
-const Contract = () => {
+const Contract = (props) => {
      const [dialog, setDialog] = useState(false);
+     const [quiry, setQuiry] = useState([]);
+     const [accept, setAccept] = useState(0);
+
+
+
+     useEffect(() => {
+          const dbRef = ref(getDatabase());
+          get(child(dbRef, `contracts/`)).then((res) => {
+               if (res.exists()) {
+                    setQuiry(res.val());
+                    console.log(quiry);
+               }
+          }).catch((error) => {
+               console.error(error);
+          });
+
+     }, []);
 
      return (
           <div>
@@ -21,10 +40,9 @@ const Contract = () => {
                </div>
                <div className="grid grid-cols-3 md:mx-32 mx-6 my-12">
                     <div className="bg-blue-700 text-center px-4 mx-8 text-xl font-medium py-12">
-                         <button className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">All Contracts</button>
-                         <button className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">Accepted Contracts</button>
-                         <button className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">Pending Contracts</button>
-                         <button className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">Rejected Contracts</button>
+                         <button onClick={() => { setAccept(0) }} className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">All Contracts</button>
+                         <button onClick={() => { setAccept(1) }} className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">Accepted Contracts</button>
+                         <button onClick={() => { setAccept(-1) }} className="text-white w-full shadow hover:shadow-xl border-2 rounded-xl border-blue-900 border-r my-4 py-2 hover:bg-blue-800 bg-blue-600 ">Rejected Contracts</button>
                     </div>
 
 
@@ -41,51 +59,55 @@ const Contract = () => {
 
                          </div>
 
-                         <div className="px-6 py-6 my-6  border mx-8  shadow hover:shadow-xl">
-                              <p className="text-xl py-1 font-medium">Contract ID: # 404-6088121-1681909</p>
-                              <p className="text-lg py-1 font-light">Name: <span className="font-normal">John T</span></p>
-                              <p className="text-lg pb-1 font-light">Product: <span className="font-normal">Cashew</span></p>
-                              <p className="text-lg pb-1 font-light">Quantity: <span className="font-normal">12 Tons</span></p>
-                              <p className="text-lg pb-1 font-light">Address: <span className="font-normal">Survey No. 12, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043</span></p>
-                              <div className="flex justify-items-center mt-6">
-                                   <p className="flex-1 inline-block">Status: <span className="text-green-700 font-medium">Accepted</span></p>
-                                   <p className="flex-1 inline-block mx-6">Contract Date: <span className="font-medium">12-12-2022</span></p>
-                                   <a className="flex-1 inline-block bg-green-700 text-center  py-1 text-white shadow hover:bg-green-800 hover:shadow-xl rounded-xl" href="./detail">
-                                        <button className="inline-block ">Download Contract</button>
-                                   </a>
-                              </div>
+                         {
+                                   quiry.map((e, key) => {
+                                        console.log(e);
+                                        if (e.sellerId === props.seller.id) {
 
-                         </div>
+                                             if (accept == 0 ) {
+                                                  return (
+                                                       <div id={key} className="px-6 py-3 my-3 border mx-8  shadow hover:shadow-xl">
+                                                            <div className="">
+                                                                 <p className="text-lg py-1 font-light">Contract Id: <span className="font-normal">{e.contractId}</span></p>
+                                                                 <p className="text-lg py-1 font-light">Company Name: <span className="font-normal">{e.sellerName}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Product: <span className="font-normal">{e.productName}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Quantity: <span className="font-normal">{e.size} KG</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Lots: <span className="font-normal">{e.lot}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Address: <span className="font-normal">{e.sellerAddress}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Status: <span className={`${e.status=="Accepted"?"text-green-500":e.status=="pending"?"text-yellow-400":"text-red-500"} font-normal`}>{e.status}</span></p>
 
-                         <div className="px-6 py-6 my-6  border mx-8  shadow hover:shadow-xl">
-                              <p className="text-xl py-1 font-medium">Contract ID: # 404-6088121-1681909</p>
-                              <p className="text-lg py-1 font-light">Name: <span className="font-normal">John T</span></p>
-                              <p className="text-lg pb-1 font-light">Product: <span className="font-normal">Cashew</span></p>
-                              <p className="text-lg pb-1 font-light">Quantity: <span className="font-normal">12 Tons</span></p>
-                              <p className="text-lg pb-1 font-light">Address: <span className="font-normal">Survey No. 12, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043</span></p>
-                              <div className="flex justify-items-center mt-6">
-                                   <p className="flex-1 inline-block">Status: <span className="text-yellow-500 font-medium">Pending</span></p>
-                                   <p className="flex-1 inline-block mx-6">Contract Date: <span className="font-medium">12-12-2022</span></p>
-                                   {/* <button className="flex-1 inline-block bg-green-700  py-1 text-white shadow hover:bg-green-800 hover:shadow-xl rounded-xl">Download Contract</button> */}
+                                                                 {/* <div className="text-center">
+                                                                      <button onClick={() => setContract({ value: e, index: key })} className="mx-auto text-center text-base text-green-600 border border-white hover:shadow-xl hover:border-green-600 mb-3 py-2 px-3 rounded-xl">View Contract</button>
+                                                                 </div> */}
+                                                            </div>
+                                                       </div>
+                                                  )
+                                             } else if ((accept === 1 && e.status == "Accepted") || (accept === -1 && e.status == "Rejected")) {
 
-                              </div>
+                                                  return (
+                                                       <div id={key} className="px-6 py-3 my-3 border mx-8  shadow hover:shadow-xl">
+                                                            <div className="">
+                                                                 <p className="text-lg py-1 font-light">Contract Id: <span className="font-normal">{e.contractId}</span></p>
+                                                                 <p className="text-lg py-1 font-light">Company Name: <span className="font-normal">{e.sellerName}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Product: <span className="font-normal">{e.productName}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Quantity: <span className="font-normal">{e.size} KG</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Lots: <span className="font-normal">{e.lot}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Address: <span className="font-normal">{e.sellerAddress}</span></p>
+                                                                 <p className="text-lg pb-1 font-light">Status: <span className={`${e.status=="Accepted"?"text-green-500":"text-red-500"} font-normal`}>{e.status}</span></p>
 
-                         </div>
+                                                                 {/* <div className="text-center">
+                                                                      <button onClick={() => setContract({ value: e, index: key })} className="mx-auto text-center text-base text-green-600 border border-white hover:shadow-xl hover:border-green-600 mb-3 py-2 px-3 rounded-xl">View Contract</button>
+                                                                 </div> */}
+                                                            </div>
+                                                       </div>
+                                                  )
+                                             }
 
-                         <div className={` px-6 py-6 my-6  border mx-8  shadow hover:shadow-xl`}>
-                              <p className="text-xl py-1 font-medium">Contract ID: # 404-6088121-1681909</p>
-                              <p className="text-lg py-1 font-light">Name: <span className="font-normal">John T</span></p>
-                              <p className="text-lg pb-1 font-light">Product: <span className="font-normal">Cashew</span></p>
-                              <p className="text-lg pb-1 font-light">Quantity: <span className="font-normal">12 Tons</span></p>
-                              <p className="text-lg pb-1 font-light">Address: <span className="font-normal">Survey No. 12, Near, Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra 411043</span></p>
-                              <div className="flex justify-items-center mt-6">
-                                   <p className="flex-1 inline-block">Status: <span className="text-red-500 font-medium">Rejected</span></p>
-                                   <p className="flex-1 inline-block mx-6">Contract Date: <span className="font-medium">12-12-2022</span></p>
-                                   {/* <button className="flex-1 inline-block bg-green-700  py-1 text-white shadow hover:bg-green-800 hover:shadow-xl rounded-xl">Download Contract</button> */}
+                                        }
 
-                              </div>
 
-                         </div>
+                                   })
+                              }
 
 
                     </div>

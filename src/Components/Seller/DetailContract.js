@@ -188,7 +188,7 @@ const DetailContract = (props) => {
                     <div className={`absolute ${dialog == true ? "" : "hidden"} bg-gray-100 z-50 w-full h-full top-0 text-center`}>
                          <div className="   mx-auto mt-8">
                               <img className="w-2/5 m-auto my-4" src="/images/check.gif" alt="check sign"></img>
-                              <p className="text-3xl my-12 text-green-600">Request Submitted Successfully</p>
+                              <p className="text-3xl my-12 text-green-600">Contract Request Submitted Successfully</p>
                          </div>
 
                     </div>
