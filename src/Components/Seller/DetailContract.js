@@ -71,7 +71,8 @@ const DetailContract = (props) => {
                contractDate: today,
                expiryDate: newDate,
                totalPrice: contract.value.price * contract.value.size,
-               status: "pending"
+               status: "pending",
+               rating:""
 
           }
           const dbRef = ref(getDatabase());

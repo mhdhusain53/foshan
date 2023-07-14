@@ -26,6 +26,8 @@ const Contract = (props) => {
 
      }, []);
 
+     
+
      return (
           <div>
                <SellerNavbar />

@@ -10,6 +10,7 @@ const Marketplace = (props) => {
      const [filter, setFilter] = useState([])
      const [searchValue, setSearchValue] = useState('');
      const [datas, setDatas] = useState([])
+     const [topRated, setTopRated] = useState(false);
      useEffect(() => {
           const dbRef = ref(getDatabase());
           var userId = 53;
@@ -117,7 +118,8 @@ const Marketplace = (props) => {
                          </div>
                     </div>
                     <div className="lg:col-span-3 md:col-span-2 ">
-                         <div className="my-6">
+                         <div className="grid grid-cols-3">
+                         <div className="my-6 col-span-2">
                               <p className="inline-block bg-blue-200 border border-gray-500 text-center text-lg ml-6 py-2 px-10">
                                    Location
                               </p>
@@ -131,13 +133,19 @@ const Marketplace = (props) => {
                                         setFilter([...filter, { name: searchValue }])
                                         setSearchValue("")
                                    }}>
-
                                         <svg className="w-7 h-7 text-gray-500 mr-2 inline-block" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
                                    </button>
 
                               </div>
 
                          </div>
+                         <div className="justify-items  flex ml-8 mt-4">
+                              <input id="topRated" className="mt-5 h-5 w-5 mr-2 accent-yellow-400" type="checkbox" name="topRated" checked={topRated} onChange={(e)=>setTopRated(!topRated)} ></input>
+                              <label for="topRated" className=" text-sm font-medium mt-5">show only top rated products</label>                             
+                         </div>
+
+                         </div>
+                         
                          <div className="my-2 ml-4 d-flex">
                               {filter.map((fil, i) => {
                                    return (
@@ -158,7 +166,7 @@ const Marketplace = (props) => {
                                         }
                                    }
                                    console.log(check);
-                                   if (check) {
+                                   if (check &&( (data.rating>=4&&topRated==true)||((topRated==false))) ) {
                                         return (
                                              <div key={i} >
                                                   <MarketplaceCard
