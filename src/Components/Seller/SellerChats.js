@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import SellerNavbar from "./SellerNavbar";
 import Footer from "../Footer";
-import ChatData from "../ChatData";
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { auth, db } from "../../firebase";
 import { addDoc, collection, serverTimestamp, query, orderBy, onSnapshot, limit, } from "firebase/firestore";
 
 const SellerChats = (props) => {
+     if(!props.seller){
+          window.location.pathname="seller/login";
+     }
      const [message, setMessage] = useState("");
      const [msgs, setMsgs] = useState([{ name: "" }]);
      const [client, setClient] = useState({ email: "" });

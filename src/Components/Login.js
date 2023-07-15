@@ -18,11 +18,11 @@ const Login = (props) => {
                     props.onSetUser({name:res._tokenResponse.displayName,email:res._tokenResponse.email})
                     
                     navigate("../marketplace");
-
                }
           ).catch(err=>{
                console.log(err.message);
-               seterror(err.message);
+               var errr = err.message.substr(9);
+               seterror(errr);
           });
           
      }

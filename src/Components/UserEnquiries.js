@@ -6,6 +6,9 @@ import { ref, get, getDatabase, child } from "firebase/database";
 
 
 const UserEnquiries = (props) => {
+     if(!props.user){
+          window.location.pathname="/login";
+     }
      const [dialog, setDialog] = useState(false);
      const [enquiries, setEnquiries] = useState([]);
      const [accept, setAccept] = useState(0);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import ChatData from "./ChatData";
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp, query, orderBy, onSnapshot, limit, } from "firebase/firestore";
@@ -9,6 +8,9 @@ import { ref, get, getDatabase, child } from "firebase/database";
 
 
 const Chats = (props) => {
+     if(!props.user){
+          window.location.pathname="/login";
+     }
      const [message, setMessage] = useState("");
      const [msgs, setMsgs] = useState([]);
      const [seller, setSeller] = useState({ businessName: "",id:"l" });

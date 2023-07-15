@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default (props) => {
-     console.log(props.allData);
      return (
           <div className=" bg-gray-100 inline-block shadow hover:shadow-2xl">
                <div className="relative w-2/3 m-auto mb-4 ">

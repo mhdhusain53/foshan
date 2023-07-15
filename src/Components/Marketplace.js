@@ -17,8 +17,6 @@ const Marketplace = (props) => {
           get(child(dbRef, `products/`)).then((res) => {
                if (res.exists()) {
                     setDatas(res.val());
-                    console.log(datas);
-
                }
           }).catch((error) => {
                console.error(error);
@@ -165,7 +163,6 @@ const Marketplace = (props) => {
                                              break;
                                         }
                                    }
-                                   console.log(check);
                                    if (check &&( (data.rating>=4&&topRated==true)||((topRated==false))) ) {
                                         return (
                                              <div key={i} >

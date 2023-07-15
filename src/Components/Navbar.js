@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export default (props) => {
 
      const [drop, setDrop] = useState(false);
-     var location = window.location.pathname;
      const logout = () => {
-
+          localStorage.removeItem("user");
+          window.location.pathname = "./";
      }
      const profile = () => {
           if (props.user === false) {
@@ -37,8 +37,8 @@ export default (props) => {
                                    <li className="border">
                                         <Link to="/contract" className="block px-4 py-2 hover:bg-gray-100">Contract</Link>
                                    </li>
-                                   <li className="border">
-                                        <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Logout</Link>
+                                   <li  className="border">
+                                        <a onClick={()=>logout()} href="/" className="block px-4 py-2 hover:bg-gray-100">Logout</a>
                                    </li>
 
                               </ul>

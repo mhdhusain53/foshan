@@ -7,17 +7,14 @@ import { ref, set, get, getDatabase, child } from "firebase/database";
 import { database } from "../firebase";
 
 const Detail = (props) => {
+     if(!props.user){
+          window.location.pathname="/login";
+     }
      const [dialog, setDialog] = useState(false);
      const [requirement, setRequirement] = useState({ size: "", lot: "" });
 
-     // useEffect(()=>{
-     //      if(props.detail){
-     //           window.location="/marketplace";
-     //      }
-     // },[])
-
      const setfinal = () => {
-          // window.location = "/marketplace";
+          window.location = "/marketplace";
      }
 
      const submit = (e) => {

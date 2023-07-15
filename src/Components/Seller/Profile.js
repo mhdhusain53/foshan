@@ -4,6 +4,9 @@ import Footer from "../Footer";
 
 
 const Profile=({seller})=>{
+     if(!seller){
+          window.location.pathname="seller/login";
+     }
      return(
           <div>
                <SellerNavbar />

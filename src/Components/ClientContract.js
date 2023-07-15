@@ -6,6 +6,9 @@ import { database } from "../firebase";
 
 
 const ClientContract = (props) => {
+     if(!props.user){
+          window.location.pathname="/login";
+     }
      const [contract, setContract] = useState({ value: 0, index: 0 });
      const [quiry, setQuiry] = useState([]);
      const [heading, setHeading] = useState("");

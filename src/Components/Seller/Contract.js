@@ -7,6 +7,9 @@ import { database } from "../../firebase";
 
 
 const Contract = (props) => {
+     if(!props.seller){
+          window.location.pathname="seller/login";
+     }
      const [dialog, setDialog] = useState(false);
      const [quiry, setQuiry] = useState([]);
      const [accept, setAccept] = useState(0);

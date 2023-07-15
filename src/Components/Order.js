@@ -6,6 +6,9 @@ import { database } from "../firebase";
 
 
 const Order = (props) => {
+     if(!props.user){
+          window.location.pathname="/login";
+     }
      const [rating, setRating] = useState({ index: -1, val: 0 });
      const [contract, setContract] = useState([]);
      const [dialog, setDialog] = useState(-1);

@@ -9,6 +9,9 @@ import { v4 as uuid } from 'uuid';
 
 
 const DetailContract = (props) => {
+     if(!props.seller){
+          window.location.pathname="seller/login";
+     }
      const [quiry, setQuiry] = useState([]);
      const [contract, setContract] = useState({ value: 0, set: false });
      const [dialog, setDialog] = useState(false);

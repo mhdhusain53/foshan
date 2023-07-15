@@ -4,6 +4,9 @@ import Footer from "../Footer";
 import { ref, set, get, getDatabase, child } from "firebase/database";
 
 const Orders = (props) => {
+     if(!props.seller){
+          window.location.pathname="seller/login";
+     }
 
      const [contract, setContract] = useState([]);
 
