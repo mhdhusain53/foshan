@@ -9,8 +9,8 @@ export default (props) => {
                     <div className={`absolute text-xs top-0 bg-orange-500 text-gray-50  px-1 pr-2 py-1 ${props.allData.rating >= 4 ? "" : "hidden"}`}>
                          <p className="">Top Rated</p>
                     </div>
-                    <div className={`absolute text-sm ${props.allData.rating >= 4 ? "top-6" : "top-0"} bg-gray-400  rounded-full px-1 pr-2 py-1 mt-2 ml-1 `}>
-                         <span className="ml-2">{props.allData.rating} ⭐</span>
+                    <div className={`absolute text-sm ${props.allData.rating===0?"hidden":""} ${props.allData.rating >= 4 ? "top-6" : "top-0"} bg-gray-400  rounded-full px-1 pr-2 py-1 mt-2 ml-1 `}>
+                         <span className={` ml-2`}>{props.allData.rating} ⭐</span>
                     </div>
                </div>
                <p className="font-light text-lg">{props.allData.name}</p>

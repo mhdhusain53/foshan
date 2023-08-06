@@ -10,7 +10,7 @@ const AddProducts = ({ seller }) => {
      if(!seller){
           window.location.pathname="seller/login";
      }
-     const [value, setvalues] = useState({ category: "High Speed Steel", grade: "304", usage: "Construction", name: "", price: "", quantity: "", sellerName: seller.businessName, sellerId: seller.id, email: seller.email, city: seller.city, state: seller.state, address: seller.address });
+     const [value, setvalues] = useState({ category: "High Speed Steel", grade: "304", usage: "Construction", name: "", price: "", quantity: "", sellerName: seller.businessName, sellerId: seller.id, email: seller.email, city: seller.city, state: seller.state, address: seller.address,rating:0,buyers:0 });
      const [acategory, setCategory] = useState({ value: "High Speed Steel", set: false });
      const [agrade, setGrade] = useState({ value: "304", set: false });
      const [ausage, setUsage] = useState({ value: "Construction", set: false });

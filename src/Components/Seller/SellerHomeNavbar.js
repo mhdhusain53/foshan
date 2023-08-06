@@ -21,7 +21,7 @@ const SellerHomeNavbar = () => {
 
                               <ul className="flex  p-4 md:p-0 mt-4 font-medium align-items-center justify-items-center border border-gray-100 rounded-lg  md:flex-row  md:space-x-8  ">
                                    <li>
-                                        <Link to="/seller/login" className="text-center inline-block  py-2 pl-3 pr-4 text-white bg-yellow-500 rounded   " aria-current="page">Start Selling</Link>
+                                        <Link to="/seller/login" className="text-center inline-block  py-2 pl-3 pr-4 text-white bg-yellow-500 hover:bg-yellow-600 rounded   " aria-current="page">Start Selling</Link>
                                    </li>
                                    <li>
                                    <Link to="/seller/login" className="text-center inline-block  py-2 pl-3 pr-4 text-white bg-blue-700 rounded   " aria-current="page">Login</Link>

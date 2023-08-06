@@ -53,7 +53,7 @@ export default (props) => {
           <div>
                <div>
                     <nav className="flex items-center justify-between flex-wrap bg-gray-200 py-3 px-6">
-                         <Link to="/"><img src="/images/logo.png" className="sm:w-20 w-16 " /></Link>
+                         <Link to="/marketplace"><img src="/images/logo.png" className="sm:w-20 w-16 " /></Link>
 
                          <div className={` mx-auto md:flex flex-wrap flex-auto px-4  text-center `} >
                               <div className={` mx-auto flex-auto text-center text-lg md:text-2xl inline-block text-black`}>

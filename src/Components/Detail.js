@@ -107,7 +107,7 @@ const Detail = (props) => {
                     <div className="grid md:grid-cols-2 text-center md:text-left">
                          <div className="align-items-center relative">
                               <img src="images/iron1.png" className=" md:w-5/6 w-full rounded"></img>
-                              <div className="absolute text:lg md:text-2xl top-0 bg-gray-200  rounded-full px-2 py-1 ml-2 mt-2">
+                              <div className={` ${props.detail.rating===0?"hidden":""} absolute text:lg md:text-2xl top-0 bg-gray-200  rounded-full px-2 py-1 ml-2 mt-2`}>
                                    <span className="ml-2">{props.detail.rating} ⭐</span>
                               </div>
                               <h1 className="text-2xl mt-4">{props.detail.sellerName}</h1>
